@@ -10,25 +10,64 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-
   overflow: hidden;
+}
+
+a {
+  font-size: 32px;
+  text-decoration: none;
+  color: coral;
+}
+
+.menu-reveal {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: absolute;
+  height: 100vh;
+  width: 250px;
+  bottom: 0;
+  transition: transform 1s ease-in;
+  left: 0;
+  transform-origin: top left;
+  transform: rotate(35deg);
+}
+
+.menu-reveal ul {
+  list-style-type: none;
+  margin-left: 24px;
+  margin-bottom: 48px;
+  padding: 0;
+}
+
+.menu-reveal ul li {
+  margin-top: 24px;
 }
 
 .main-container {
   background-color: azure;
   display: flex;
+  height: 200vh;
   justify-content: center;
   transform-origin: top left;
-  transition: transform 2s ease;
+  transition: transform 1s ease-in-out;
 }
 
 .article-container {
   z-index: 0;
   width: 60%;
-  height: 200vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: left;
+}
+
+.container-rotate {
+  transform: rotate(-35deg);
+}
+
+.menu-rotate {
+  transform: rotate(0deg);
 }
 
 img {
@@ -44,6 +83,11 @@ img {
   background-color: coral;
   width: 256px;
   height: 256px;
+  cursor: pointer;
+}
+
+.open {
+  transform: rotate(180deg);
 }
 
 .hidden {
@@ -52,10 +96,9 @@ img {
 
 .fa-solid {
   color: azure;
-  cursor: pointer;
   position: absolute;
   top: 60%;
   left: 75%;
   transform: translateX(-65%);
-  padding: 32px 24px;
+  padding: 32px 48px;
 }
