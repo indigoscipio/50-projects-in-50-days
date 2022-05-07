@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,700;1,400&display=swap");
+
+body {
+  background-color: beige;
+  font-family: "DM Sans", sans-serif;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.search-container {
+  display: flex;
+  transition: width 1s ease;
+}
+
+input {
+  font-family: inherit;
+  font-size: 20px;
+  border: none;
+  height: 64px;
+  width: 64px;
+}
+
+.search-container.active input {
+  padding: 0 16px;
+  width: 200px;
+}
+
+.search-container.active #search-button {
+  transform: translateX(200px);
+}
+
+i.fa-search {
+  color: beige;
+}
+
+button {
+  position: absolute;
+  cursor: pointer;
+  background-color: brown;
+  border: none;
+  width: 64px;
+  height: 64px;
+  transition: width 0.3s ease;
+}
+
+.search-container {
+  padding: 24px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+}
