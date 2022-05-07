@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  height: 100vh;
+  object-fit: cover;
+}
+
+h1 {
+  background-color: white;
+  z-index: 1;
+  border-radius: 16px;
+  padding: 24px;
+  font-size: 6em;
+  color: black;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.container {
+  z-index: 0;
+  height: 100vh;
+  background: url(Images/pexels-pixabay-139398.jpg);
+  background-size: cover;
+  filter: blur(16px);
+}
