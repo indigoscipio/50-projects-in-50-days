@@ -12,6 +12,7 @@ let reveals = document.querySelectorAll(".reveal");
 // }
 
 function functionReveal() {
+  console.log(innerHeight);
   reveals.forEach((element) => {
     let windowHeight = window.innerHeight;
     let elementTop = element.getBoundingClientRect().top;
