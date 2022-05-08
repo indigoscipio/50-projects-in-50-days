@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap");
+
+body {
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card {
+  width: 400px;
+  height: 200px;
+  background-color: rgb(31, 47, 109);
+  color: white;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.reveal {
+  opacity: 0;
+  transition: 2s all ease;
+  transform: translateX(150px);
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateX(0);
+}
