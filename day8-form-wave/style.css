@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap");
+
+body {
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: crimson;
+}
+
+.container {
+  background-color: white;
+  width: 480px;
+  padding: 64px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  width: 100%;
+  font: inherit;
+  border: none;
+  padding: 24px;
+  background-color: cadetblue;
+  cursor: pointer;
+  border-radius: 8px;
+  color: white;
+  margin-top: 48px;
+}
+
+.input-item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  margin-top: 48px;
+  flex-direction: column;
+}
+
+label {
+  position: absolute;
+  left: 0px;
+  bottom: 4px;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+input {
+  background: transparent;
+  font: inherit;
+  font-size: 18px;
+  padding: 16px 0;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.input-item label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  transform: 1s all ease;
+}
+
+.input-item input:focus + label span,
+.input-item input:valid + label span {
+  color: rgb(55, 115, 134);
+  transform: translateY(-30px);
+}
+
+input:focus {
+  outline: none;
+}
+
+label.active {
+  transform: translateY(-50%);
+}
