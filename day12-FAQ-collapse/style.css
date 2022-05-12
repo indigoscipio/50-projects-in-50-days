@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap");
+
+/* * {
+  border: 1px solid red;
+} */
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  background-color: cornflowerblue;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+.faq-panel {
+  overflow: hidden;
+  position: relative;
+  border-radius: 16px;
+  margin-top: 24px;
+  padding: 24px;
+  background-color: rgb(255, 255, 255);
+  width: 600px;
+  transition: all 1s ease;
+}
+
+.faq-panel h3,
+.faq-panel p {
+  position: relative;
+  z-index: 1;
+}
+
+.fa-comments {
+  z-index: 0;
+  color: rgb(236, 236, 236);
+  font-size: 16em;
+  position: absolute;
+  left: -32px;
+  bottom: -32px;
+}
+
+.faq-text {
+  display: none;
+}
+
+.active .faq-text {
+  display: block;
+}
+
+.faq-panel .fa-circle-chevron-up {
+  display: none;
+}
+
+.active .fa-circle-chevron-up {
+  display: inline-block;
+}
+.active .fa-circle-chevron-down {
+  display: none;
+}
+
+.dropdown-icon .fa-solid {
+  color: rgba(24, 43, 78, 0.671);
+  cursor: pointer;
+}
+
+.dropdown-icon {
+  padding: 0;
+  position: absolute;
+  background: none;
+  border: none;
+  top: 32px;
+  right: 32px;
+}
