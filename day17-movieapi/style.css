@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+  font-family: "Nunito", sans-serif;
+  background-color: rgb(234, 236, 241);
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card {
+  width: 340px;
+  background-color: white;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.main-container {
+  padding: 96px 24px;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.movie-info {
+  font-weight: bold;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#search {
+  border-radius: 48px;
+  height: 48px;
+  padding: 16px;
+}
+
+.movie-card img {
+  width: 100%;
+}
+
+#logo {
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: white;
+}
+
+#navbar {
+  background-color: rgb(22, 80, 114);
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.overview-container {
+  background-color: rgb(22, 80, 114);
+  padding: 0 16px;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
+}
+
+.movie-card:hover .overview-container {
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.movie-rating {
+  background-color: rgb(234, 236, 241);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.movie-rating.green {
+  background-color: rgb(218, 255, 213);
+  color: rgb(44, 110, 44);
+}
+
+.movie-rating.red {
+  background: rgb(255, 179, 179);
+  color: rgb(184, 29, 42);
+}
+
+.movie-rating.orange {
+  background: rgb(253, 255, 240);
+  color: rgb(184, 143, 29);
+}
