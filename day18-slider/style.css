@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background: url(Images/bailey-zindel-NRQV-hBF10M-unsplash.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+}
+
+body::before {
+  width: 100%;
+  content: "";
+  position: absolute;
+  height: 100vh;
+  background-color: rgba(32, 33, 36, 0.61);
+  z-index: -1;
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  position: absolute;
+  background-position: center;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slider-container {
+  height: 70vh;
+  width: 70vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.arrow {
+  color: white;
+  cursor: pointer;
+  padding: 24px;
+  border: 2px solid white;
+  background-color: transparent;
+}
+
+.arrow-left {
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+.arrow-right {
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+.fa-solid {
+  font-size: 2em;
+}
