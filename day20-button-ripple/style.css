@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap");
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: crimson;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button {
+  cursor: pointer;
+  width: 262px;
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  font: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+span.circle {
+  z-index: -1;
+  position: absolute;
+  background-color: gray;
+  border-radius: 50%;
+  transform: scale(1);
+  width: 100px;
+  height: 100px;
+  transition: scale 1s ease;
+}
+
+@keyframes scale {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
