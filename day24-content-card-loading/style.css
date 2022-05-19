@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  font-family: "Rubik", sans-serif;
+  justify-content: center;
+  background-color: cadetblue;
+}
+
+h2 {
+  margin-bottom: 8px;
+}
+
+#image-container {
+  height: 260px;
+  background-image: url(Images/pexels-breakingpic-3243.jpg);
+  background-size: cover;
+}
+
+.card-container {
+  overflow: hidden;
+  width: 400px;
+  height: auto;
+  background-color: white;
+  border-radius: 16px;
+
+  box-shadow: 0 16px 32px rgba(51, 49, 49, 0.216);
+}
+
+.card-info {
+  flex-direction: column;
+
+  gap: 24px;
+  display: flex;
+  padding: 32px;
+}
+
+.author-container {
+  gap: 16px;
+  align-items: center;
+  display: flex;
+}
+
+.author-profile {
+  background-image: url(Images/pexels-breakingpic-3243.jpg);
+  background-size: cover;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
