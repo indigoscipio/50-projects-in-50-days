@@ -1,0 +1,22 @@
+.love-me {
+  width: 320px;
+  height: 480px;
+  max-width: 100%;
+  background-image: url(image1.jpg);
+  background-size: cover;
+  position: relative;
+  cursor: pointer;
+}
+
+.love-me .fa-heart {
+  position: absolute;
+  animation: grow 0.5s ease;
+  transform: scale(1);
+}
+
+@keyframes grow {
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
