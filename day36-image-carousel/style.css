@@ -1,0 +1,17 @@
+img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.image-container {
+  display: flex;
+  transition: all 0.3s ease;
+  transform: translateX(0);
+}
+
+.carousel {
+  height: 500px;
+  width: 500px;
+  overflow: hidden;
+}

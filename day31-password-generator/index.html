@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="" id="form-pw-generator">
+      <h2>Password Generator</h2>
+      <div class="item-pw-main">
+        <input type="text" id="input-pw-main" disabled />
+        <div class="pw-main-icon">
+          <i class="fa-solid fa-clipboard"></i>
+        </div>
+      </div>
+      <div class="item-pw-length">
+        <label for="input-pw-length">Password Length</label>
+        <input type="number" id="input-pw-length" />
+      </div>
+      <div class="item-pw-incl-upper">
+        <label for="input-pw-incl-upper">Include Uppercase Letters</label>
+        <input type="checkbox" id="input-pw-incl-upper" />
+      </div>
+      <div class="item-pw-incl-lower">
+        <label for="input-pw-incl-lower">Include Lowercase Letters</label>
+        <input type="checkbox" id="input-pw-incl-lower" />
+      </div>
+      <div class="item-pw-incl-num">
+        <label for="input-pw-incl-num">Include Numbers</label>
+        <input type="checkbox" id="input-pw-incl-num" />
+      </div>
+      <div class="item-pw-incl-symbols">
+        <label for="input-pw-incl-symbols">Include Symbols</label>
+        <input type="checkbox" id="input-pw-incl-symbols" />
+      </div>
+      <button class="button" id="btn-generate-pw" type="submit">
+        Generate Password
+      </button>
+    </form>
+  </body>
+  <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/ffb9bf6e53.js"></script>
+</html>

@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap");
+
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1.6;
+  color: rgba(39, 39, 70, 0.836);
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 1.6rem;
+  background-color: coral;
+  color: white;
+  padding: 1.6rem;
+  font-family: inherit;
+  border: 0;
+}
+
+input {
+  padding: 0.8rem;
+  font-family: inherit;
+}
+
+input[type="checkbox"] {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.checkbox-container {
+}
+
+.toggle {
+  visibility: hidden;
+}
+
+.label {
+  height: 48px;
+  border-radius: 100px;
+  background-color: rgb(231, 231, 231);
+  width: 96px;
+  display: inline-block;
+  position: relative;
+}
+
+.toggle:checked + .label {
+  background-color: coral;
+}
+
+.ball {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background-color: white;
+  animation: slideOff 0.2s linear forwards;
+}
+
+.toggle:checked + label .ball {
+  animation: slideOn 0.2s linear forwards;
+}
+
+@keyframes slideOn {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(48px);
+  }
+}
+
+@keyframes slideOff {
+  0% {
+    transform: translateX(48px);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

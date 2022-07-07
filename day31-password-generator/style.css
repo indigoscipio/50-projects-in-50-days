@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap");
+
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1.6;
+  color: rgba(39, 39, 70, 0.836);
+  font-size: 1.8rem;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 1.6rem;
+  background-color: coral;
+  color: white;
+  padding: 1.6rem;
+  font-family: inherit;
+  border: 0;
+}
+
+input {
+  padding: 0.8rem;
+  font-family: inherit;
+}
+
+input[type="checkbox"] {
+  height: 2.4rem;
+  width: 2.4rem;
+}
