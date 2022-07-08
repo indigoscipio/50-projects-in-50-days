@@ -17,10 +17,17 @@ buttonStart.addEventListener("click", () => {
 });
 
 async function getQuizData() {
+  body.innerHTML = ``;
+  let loader = document.createElement("div");
+  loader.classList.add("loader");
+  body.append(loader);
+
   let res = await fetch(
-    `https://the-trivia-api.com/api/questions?categories=general_knowledge&limit=10`
+    `https://the-trivia-api.com/api/questions?categories=general_knowledge&limit=1`
   );
   let data = await res.json();
+
+  loader.remove();
   return data;
 }
 
