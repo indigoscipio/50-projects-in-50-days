@@ -53,4 +53,11 @@ async function searchUser() {
       element.classList.add("hidden");
     }
   });
+
+  noMatchFound();
+}
+
+function noMatchFound() {
+  let hiddenEls = document.querySelectorAll(".hidden");
+  console.log(hiddenEls);
 }
