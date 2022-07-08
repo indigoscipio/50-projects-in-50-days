@@ -23,7 +23,7 @@ async function getQuizData() {
   body.append(loader);
 
   let res = await fetch(
-    `https://the-trivia-api.com/api/questions?categories=general_knowledge&limit=1`
+    `https://the-trivia-api.com/api/questions?categories=general_knowledge&limit=10`
   );
   let data = await res.json();
 
