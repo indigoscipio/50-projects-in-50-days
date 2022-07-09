@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600&display=swap");
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Set core body defaults */
+body {
+  font-size: 1.6rem;
+  background-color: mediumaquamarine;
+  color: rgba(19, 54, 54, 0.775);
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.6;
+  font-family: "Albert Sans", sans-serif;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.main-title {
+  text-align: center;
+  font-size: 12.8rem;
+  color: mintcream;
+  letter-spacing: -0.4rem;
+}
+
+.todo-container {
+  width: 48rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header section */
+.header {
+  background-color: white;
+  display: flex;
+  border-bottom: 1px solid rgb(209, 213, 213);
+}
+
+.mark-all-checkbox {
+  display: none;
+}
+
+.mark-all-checkbox:checked + .mark-all-label {
+  color: darkcyan;
+}
+
+.mark-all-container {
+  color: lightgray;
+}
+
+.mark-all-label {
+  height: 6.4rem;
+  width: 6.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.todo-input {
+  border: 0;
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 2.4rem;
+}
+
+.todo-input:focus {
+  outline: 0;
+}
+
+/* main section */
+
+.main {
+  background-color: white;
+}
+
+.todo-list {
+}
+
+/* footer section */
+.footer {
+}

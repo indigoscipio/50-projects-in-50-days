@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo ✅✅</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="main-title">todos.</h1>
+
+    <section class="todo-container">
+      <!-- Header -->
+      <form id="todo-header" class="header">
+        <div class="mark-all-container">
+          <input
+            class="mark-all-checkbox"
+            type="checkbox"
+            id="mark-all-checkbox"
+          />
+          <label class="mark-all-label" for="mark-all-checkbox">
+            <i class="fa-solid fa-flag-checkered"></i>
+          </label>
+        </div>
+        <input
+          id="todo-input"
+          class="todo-input"
+          type="text"
+          placeholder="Enter your todo..."
+        />
+      </form>
+
+      <!-- Main -->
+      <section class="main">
+        <ul class="todo-list">
+          <li class="list-item">
+            <input type="checkbox" id="item-1" />
+            <label for="item-1">Item 1</label>
+            <button class="button--remove">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </li>
+          <li class="list-item">
+            <input type="checkbox" id="item-2" />
+            <label for="item-2">Item 2</label>
+            <button class="button--remove">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </li>
+          <li class="list-item">
+            <input type="checkbox" id="item-3" />
+            <label for="item-3">Item 3</label>
+            <button class="button--remove">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </li>
+        </ul>
+      </section>
+
+      <!-- footer -->
+      <footer class="footer">
+        <p class="todo-count">X Items Left</p>
+        <ul class="filters">
+          <li>
+            <input id="all" type="radio" name="filters" />
+            <label for="all">All</label>
+          </li>
+          <li>
+            <input id="active" type="radio" name="filters" />
+            <label for="active">Active</label>
+          </li>
+          <li>
+            <input id="completed" type="radio" name="filters" />
+            <label for="completed">Completed</label>
+          </li>
+        </ul>
+      </footer>
+    </section>
+    <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/ffb9bf6e53.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
