@@ -33,28 +33,28 @@
 
       <!-- Main -->
       <section class="main">
-        <ul class="todo-list">
-          <li class="list-item">
-            <input type="checkbox" id="item-1" />
-            <label for="item-1">Item 1</label>
+        <ul class="todo-list" id="todo-list">
+          <!-- <li class="list-item">
+            <input class="list-item-checkbox" type="checkbox" id="item-1" />
+            <label class="list-item-label" for="item-1">Item 1</label>
             <button class="button--remove">
               <i class="fa-solid fa-trash-can"></i>
             </button>
           </li>
           <li class="list-item">
-            <input type="checkbox" id="item-2" />
-            <label for="item-2">Item 2</label>
+            <input class="list-item-checkbox" type="checkbox" id="item-2" />
+            <label class="list-item-label" for="item-2">Item </label>
             <button class="button--remove">
               <i class="fa-solid fa-trash-can"></i>
             </button>
           </li>
           <li class="list-item">
-            <input type="checkbox" id="item-3" />
-            <label for="item-3">Item 3</label>
+            <input class="list-item-checkbox" type="checkbox" id="item-3" />
+            <label class="list-item-label" for="item-3">Item 3</label>
             <button class="button--remove">
               <i class="fa-solid fa-trash-can"></i>
             </button>
-          </li>
+          </li> -->
         </ul>
       </section>
 
@@ -63,18 +63,35 @@
         <p class="todo-count">X Items Left</p>
         <ul class="filters">
           <li>
-            <input id="all" type="radio" name="filters" />
-            <label for="all">All</label>
+            <input
+              class="filters-radio"
+              id="all"
+              type="radio"
+              name="filters"
+              checked
+            />
+            <label class="filters-label" for="all">All</label>
           </li>
           <li>
-            <input id="active" type="radio" name="filters" />
-            <label for="active">Active</label>
+            <input
+              class="filters-radio"
+              id="active"
+              type="radio"
+              name="filters"
+            />
+            <label class="filters-label" for="active">Active</label>
           </li>
           <li>
-            <input id="completed" type="radio" name="filters" />
-            <label for="completed">Completed</label>
+            <input
+              class="filters-radio"
+              id="completed"
+              type="radio"
+              name="filters"
+            />
+            <label class="filters-label" for="completed">Completed</label>
           </li>
         </ul>
+        <button class="button--clear">Clear Completed</button>
       </footer>
     </section>
     <script src="script.js"></script>

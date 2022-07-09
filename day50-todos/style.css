@@ -26,6 +26,7 @@ ul,
 ol {
   padding: 0;
   list-style: none;
+  margin: 0;
 }
 
 /* Set core root defaults */
@@ -92,10 +93,11 @@ select {
 }
 
 .todo-container {
-  width: 48rem;
+  width: 56rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  box-shadow: 0px 8px 16px rgba(30, 30, 44, 0.201);
 }
 
 /* Header section */
@@ -143,9 +145,94 @@ select {
   background-color: white;
 }
 
-.todo-list {
+.list-item {
+  padding: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-item-label {
+  margin-right: auto;
+  margin-left: 1.6rem;
+}
+
+.list-item-checkbox {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 100px;
+  border: 1px solid rgb(118, 128, 126);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.list-item-checkbox:checked {
+  border: 0;
+  background: darkcyan;
+}
+
+.list-item-checkbox:checked + label {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.list-item-checkbox:checked::after {
+  content: "\f00c";
+  display: inline-block;
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  color: white;
+}
+
+.list-item:not(:last-of-type) {
+  border-bottom: 1px solid rgb(209, 213, 213);
+}
+
+.button--remove {
+  cursor: pointer;
+  color: rgb(168, 182, 182);
+  border: 0;
+  background-color: transparent;
 }
 
 /* footer section */
 .footer {
+  padding: 1.6rem;
+  border-top: 1px solid rgb(209, 213, 213);
+  justify-content: space-between;
+  font-size: 1.4rem;
+  background-color: white;
+  display: flex;
+}
+
+.filters {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.filters-radio {
+  display: none;
+}
+
+.filters-radio:checked + label {
+  outline: 1px solid mediumaquamarine;
+  color: mediumaquamarine;
+}
+
+.filters-label {
+  transition: all 0.2s ease;
+  cursor: pointer;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.8rem;
+}
+
+.button--clear {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  text-decoration: underline;
+  font-weight: bold;
 }
