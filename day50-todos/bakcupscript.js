@@ -1,16 +1,11 @@
-//DOM Elements
 let todoForm = document.querySelector("#todo-header");
 let todoInput = document.querySelector("#todo-input");
 let todoList = document.querySelector("#todo-list");
 let todoCount = document.querySelector(".todo-count");
-let btnClear = document.querySelector(".button--clear");
 
-//Initial Variables
-let todosData = [];
-
-//Event Listeners
 todoForm.addEventListener("submit", addTodo);
-btnClear.addEventListener("click", clearCompleted);
+
+let todosData = [];
 
 function addTodo(e) {
   e.preventDefault();
@@ -28,18 +23,22 @@ function addTodo(e) {
       id: Date.now(),
     };
     todosData.push(newData);
+    updateCount();
 
     //Update list DOM based on data
     todosData.forEach((data, idx) => {
       let li = document.createElement("li");
       li.classList.add("list-item");
       li.dataset.index = data.id;
+
       li.innerHTML = `
         <input class="list-item-checkbox" type="checkbox" id="${data.id}" />
         <label onclick="event.stopPropagation()" class="list-item-label" for="${data.id}">${data.text}</label>
         <button class="button--remove" id="${data.id}">
             <i class="fa-solid fa-trash-can"></i>
-        </button>`;
+        </button>
+`;
+
       li.addEventListener("click", handleCheck);
       li.querySelector(".button--remove").addEventListener(
         "click",
@@ -49,13 +48,11 @@ function addTodo(e) {
 
       //check if li contains checked class
       if (data.completed) {
-        let completedEl = document.querySelector(`input[id="${data.id}"]`);
-        completedEl.parentElement.classList.add("checked");
-        completedEl.checked = true;
+        let test = document.querySelector(`input[id="${data.id}"]`);
+        test.checked = true;
       }
     });
 
-    updateCount();
     todoInput.value = "";
   }
 
@@ -67,18 +64,15 @@ function handleDelete(e) {
   //   console.log(e.currentTarget, e.currentTarget.parentNode);
 
   //Handle UI
+  //   e.currentTarget.parentNode.remove();
+
+  //Handle Data
   todosData.forEach((data) => {
-    if (e.currentTarget.parentNode.dataset.index == data.id) {
+    if (e.currentTarget.id == data.id) {
+      console.log(data.id);
       e.currentTarget.parentNode.remove();
     }
   });
-
-  //Handle Data
-  let currIdx = e.currentTarget.parentNode.dataset.index;
-  todosData = todosData.filter((data) => data.id != currIdx);
-
-  console.log(todosData);
-  updateCount();
 }
 
 //Handle Checkbox
@@ -101,7 +95,6 @@ function handleCheck(e) {
   updateCount();
 }
 
-//update count
 function updateCount() {
   let count = 0;
   todosData.forEach((data) => {
@@ -110,15 +103,4 @@ function updateCount() {
     }
   });
   todoCount.innerText = `${count} remaining`;
-}
-
-//clear completed
-function clearCompleted(e) {
-  //Handle Data
-  todosData = todosData.filter((data) => data.completed == false);
-
-  //Handle UI
-  document.querySelectorAll(".checked").forEach((el) => el.remove());
-
-  console.log(todosData);
 }

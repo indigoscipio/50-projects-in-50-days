@@ -114,11 +114,16 @@ function updateCount() {
 
 //clear completed
 function clearCompleted(e) {
-  //Handle Data
+  //remove all completed list from data
   todosData = todosData.filter((data) => data.completed == false);
 
-  //Handle UI
-  document.querySelectorAll(".checked").forEach((el) => el.remove());
+  //match the id of the data and the dom
+  todosData.forEach((data) => {
+    // if (e.currentTarget.parentNode.classList.contains("checked")) {
+    //   e.currentTarget.parentNode.remove();
+    // }
+  });
 
+  //delete the data and update the UI
   console.log(todosData);
 }
