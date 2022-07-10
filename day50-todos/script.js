@@ -4,6 +4,9 @@ let todoInput = document.querySelector("#todo-input");
 let todoList = document.querySelector("#todo-list");
 let todoCount = document.querySelector(".todo-count");
 let btnClear = document.querySelector(".button--clear");
+let radioActive = document.querySelector("#active");
+let radioCompleted = document.querySelector("#completed");
+let radioAll = document.querySelector("#all");
 
 //Initial Variables
 let todosData = [];
@@ -11,6 +14,9 @@ let todosData = [];
 //Event Listeners
 todoForm.addEventListener("submit", addTodo);
 btnClear.addEventListener("click", clearCompleted);
+radioActive.addEventListener("click", filterActive);
+radioAll.addEventListener("click", filterAll);
+radioCompleted.addEventListener("click", filterCompleted);
 
 function addTodo(e) {
   e.preventDefault();
@@ -30,30 +36,11 @@ function addTodo(e) {
     todosData.push(newData);
 
     //Update list DOM based on data
-    todosData.forEach((data, idx) => {
-      let li = document.createElement("li");
-      li.classList.add("list-item");
-      li.dataset.index = data.id;
-      li.innerHTML = `
-        <input class="list-item-checkbox" type="checkbox" id="${data.id}" />
-        <label onclick="event.stopPropagation()" class="list-item-label" for="${data.id}">${data.text}</label>
-        <button class="button--remove" id="${data.id}">
-            <i class="fa-solid fa-trash-can"></i>
-        </button>`;
-      li.addEventListener("click", handleCheck);
-      li.querySelector(".button--remove").addEventListener(
-        "click",
-        handleDelete
-      );
-      todoList.append(li);
 
-      //check if li contains checked class
-      if (data.completed) {
-        let completedEl = document.querySelector(`input[id="${data.id}"]`);
-        completedEl.parentElement.classList.add("checked");
-        completedEl.checked = true;
-      }
-    });
+    todoList.innerHTML = ``;
+    updateListDOM(todosData);
+
+    //check which tabs/state the user is currently in
 
     updateCount();
     todoInput.value = "";
@@ -62,10 +49,41 @@ function addTodo(e) {
   console.log(todosData);
 }
 
+function updateListDOM(todosData) {
+  todoList.innerHTML = ``;
+
+  if (radioActive.checked) {
+    todosData = todosData.filter((data) => data.completed == false);
+  }
+  if (radioCompleted.checked) {
+    todosData = todosData.filter((data) => data.completed == true);
+  }
+
+  todosData.forEach((data) => {
+    let li = document.createElement("li");
+    li.classList.add("list-item");
+    li.dataset.index = data.id;
+    li.innerHTML = `
+      <input class="list-item-checkbox" type="checkbox" id="${data.id}" />
+      <label onclick="event.stopPropagation()" class="list-item-label" for="${data.id}">${data.text}</label>
+      <button class="button--remove" id="${data.id}">
+          <i class="fa-solid fa-trash-can"></i>
+      </button>`;
+    li.addEventListener("click", handleCheck);
+    li.querySelector(".button--remove").addEventListener("click", handleDelete);
+    todoList.append(li);
+
+    //check if li contains checked class
+    if (data.completed) {
+      let completedEl = document.querySelector(`input[id="${data.id}"]`);
+      completedEl.parentElement.classList.add("checked");
+      completedEl.checked = true;
+    }
+  });
+}
+
 //Handle Delete
 function handleDelete(e) {
-  //   console.log(e.currentTarget, e.currentTarget.parentNode);
-
   //Handle UI
   todosData.forEach((data) => {
     if (e.currentTarget.parentNode.dataset.index == data.id) {
@@ -96,7 +114,17 @@ function handleCheck(e) {
         e.target.parentNode.classList.toggle("checked");
       }
     });
+
+    //check which tabs/state the user is currently in
+    if (radioActive.checked) {
+      filterActive();
+    }
+
+    if (radioCompleted.checked) {
+      filterCompleted();
+    }
   }
+
   console.log(todosData);
   updateCount();
 }
@@ -121,4 +149,27 @@ function clearCompleted(e) {
   document.querySelectorAll(".checked").forEach((el) => el.remove());
 
   console.log(todosData);
+}
+
+//Filter Active
+function filterActive() {
+  //filter completed list
+  let filteredData = todosData.filter((data) => data.completed == false);
+
+  //Remove completed list from the UI
+  updateListDOM(filteredData);
+
+  //update the count
+}
+
+function filterCompleted(e) {
+  //Select li that doesn't have a checked element
+  let filteredData = todosData.filter((data) => data.completed == true);
+  document;
+  updateListDOM(filteredData);
+  //update the count
+}
+
+function filterAll() {
+  updateListDOM(todosData);
 }
