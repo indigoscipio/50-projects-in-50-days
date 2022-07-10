@@ -7,6 +7,7 @@ let btnClear = document.querySelector(".button--clear");
 let radioActive = document.querySelector("#active");
 let radioCompleted = document.querySelector("#completed");
 let radioAll = document.querySelector("#all");
+let cbMarkAll = document.querySelector(".mark-all-checkbox");
 
 //Initial Variables
 let todosData = [];
@@ -17,6 +18,7 @@ btnClear.addEventListener("click", clearCompleted);
 radioActive.addEventListener("click", filterActive);
 radioAll.addEventListener("click", filterAll);
 radioCompleted.addEventListener("click", filterCompleted);
+cbMarkAll.addEventListener("click", toggleMarkAll);
 
 function addTodo(e) {
   e.preventDefault();
@@ -142,34 +144,35 @@ function updateCount() {
 
 //clear completed
 function clearCompleted(e) {
-  //Handle Data
   todosData = todosData.filter((data) => data.completed == false);
-
-  //Handle UI
   document.querySelectorAll(".checked").forEach((el) => el.remove());
-
   console.log(todosData);
 }
 
 //Filter Active
 function filterActive() {
-  //filter completed list
   let filteredData = todosData.filter((data) => data.completed == false);
-
-  //Remove completed list from the UI
   updateListDOM(filteredData);
-
-  //update the count
 }
 
 function filterCompleted(e) {
-  //Select li that doesn't have a checked element
   let filteredData = todosData.filter((data) => data.completed == true);
   document;
   updateListDOM(filteredData);
-  //update the count
 }
 
 function filterAll() {
   updateListDOM(todosData);
+}
+
+//Toggle Mark All
+function toggleMarkAll() {
+  //global data
+  todosData.forEach((data) => {
+    data.completed = cbMarkAll.checked;
+  });
+
+  updateListDOM(todosData);
+  updateCount();
+  console.log(todosData);
 }
