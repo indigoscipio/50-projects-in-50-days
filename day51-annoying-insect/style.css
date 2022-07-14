@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600&display=swap");
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Set core body defaults */
+body {
+  font-size: 1.6rem;
+  background-color: mistyrose;
+  color: rgba(53, 7, 57, 0.775);
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.6;
+  font-family: "Albert Sans", sans-serif;
+  display: flex;
+  overflow: hidden;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Screen 1 */
+
+.title {
+  letter-spacing: -1px;
+}
+
+h1 {
+  font-size: 6.4rem;
+}
+
+.screen {
+  transition: all 0.5s ease;
+  height: 100vh;
+  flex: none;
+  width: 100vw;
+  /* border: 1px solid mediumpurple; */
+}
+
+.screen-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+  flex-direction: column;
+  transform: translateX(0);
+}
+
+.button--play {
+  cursor: pointer;
+  border: 0;
+  background-color: mediumpurple;
+  padding: 1.6rem 3.2rem;
+  color: mistyrose;
+  border-radius: 0.8rem;
+}
+
+/* Screen 2 */
+.screen-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+  flex-direction: column;
+}
+
+.list {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.list-button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  border-radius: 1.6rem;
+  width: 16rem;
+  height: 16rem;
+}
+
+.list-button:hover {
+  box-shadow: 0px 8px 16px rgba(11, 11, 36, 0.159);
+}
+
+/* screen 3 */
+.screen-3 {
+  position: relative;
+}
+
+.time {
+  position: absolute;
+  top: 3.2rem;
+  left: 3.2rem;
+}
+
+.score {
+  position: absolute;
+  top: 3.2rem;
+  right: 3.2rem;
+}
+
+.message {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translate(0%, -60%);
+  z-index: 10;
+  transition: all 0.5s ease;
+  padding: 1.6rem;
+  background-color: mediumpurple;
+  text-align: center;
+  color: mistyrose;
+  font-size: 7.2rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.message.active {
+  opacity: 1;
+  display: block;
+  visibility: visible;
+  transform: translate(0%, -50%);
+}
+
+.insect {
+  display: inline-block;
+  cursor: pointer;
+  width: 12.8rem;
+  position: absolute;
+  transition: all 0.2s ease;
+}
+
+/* top: 50%;
+  left: 50%;
+  transform: rotate(45deg); */

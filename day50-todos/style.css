@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap");
 
 /* Box sizing rules */
 *,
@@ -46,7 +46,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.6;
-  font-family: "Albert Sans", sans-serif;
+  font-family: "Prompt", sans-serif;
 }
 
 /* A elements that don't have a class get default styles */
